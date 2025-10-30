@@ -44,40 +44,35 @@ contactForm.addEventListener("submit", async (e) => {
         isValid = false;
     }
 
-    // Si todo está correcto, enviamos con FormSubmit
+    // ✅ Enviar con Web3Forms si todo está correcto
     if (isValid) {
-        const ajaxUrl = contactForm.action.replace(
-            "https://formsubmit.co/",
-            "https://formsubmit.co/ajax/"
-        );
+        const formData = new FormData(contactForm);
 
         try {
-            const response = await fetch(ajaxUrl, {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { Accept: "application/json" },
-                body: new FormData(contactForm),
+                body: formData
             });
 
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
+            const data = await response.json();
+            console.log("✅ Web3Forms response:", data);
+
+            if (response.ok && data.success) {
+                // Mostrar mensaje de éxito
+                formSuccess.classList.add("show");
+                contactForm.reset();
+
+                // Ocultar después de unos segundos
+                setTimeout(() => {
+                    formSuccess.classList.remove("show");
+                }, 5000);
+            } else {
+                throw new Error(data.message || "Error sending message");
             }
 
-            const data = await response.json();
-            console.log("✅ FormSubmit response:", data);
-
-            // Mostrar mensaje de éxito
-            formSuccess.classList.add("show");
-            contactForm.reset();
-
-            // Ocultar mensaje de éxito después de unos segundos
-            setTimeout(() => {
-                formSuccess.classList.remove("show");
-            }, 5000);
         } catch (err) {
-            console.error("❌ Form submit error:", err);
-            alert(
-                "There was a problem sending your message. Please try again later or use the direct email link."
-            );
+            console.error("❌ Web3Forms submit error:", err);
+            alert("There was a problem sending your message. Please try again later.");
         }
     }
 });
