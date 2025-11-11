@@ -1,4 +1,4 @@
-// Smooth scroll function
+// Función de desplazamiento suave
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId)
   if (section) {
@@ -6,7 +6,7 @@ function scrollToSection(sectionId) {
   }
 }
 
-// Mobile menu toggle
+// Activar o desactivar el menú móvil
 const hamburger = document.querySelector(".hamburger")
 const navMenu = document.querySelector(".nav-menu")
 
@@ -26,7 +26,7 @@ hamburger.addEventListener("click", () => {
   }
 })
 
-// Close mobile menu when clicking on a link
+// Cerrar el menú móvil al hacer clic en un enlace
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active")
@@ -37,7 +37,7 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   })
 })
 
-// Navbar scroll effect
+// Efecto de desplazamiento en la navbar
 let lastScroll = 0
 const navbar = document.querySelector(".navbar")
 
@@ -53,7 +53,7 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll
 })
 
-// Intersection Observer for scroll animations
+// Intersection Observer para animaciones al desplazarse
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -100px 0px",
@@ -68,7 +68,7 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
-// Observe elements for animation
+// Observe elements para la animación
 document.addEventListener("DOMContentLoaded", () => {
   const animateElements = document.querySelectorAll(
     ".skill-category, .project-card, .contact-info, .contact-form-wrapper",
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Add active state to navigation links based on scroll position
+// Agregar el estado activo a los enlaces de navegación según la posición de desplazamiento
 window.addEventListener("scroll", () => {
   const sections = document.querySelectorAll("section[id]")
   const scrollPosition = window.pageYOffset + 100

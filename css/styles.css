@@ -41,8 +41,7 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
-/* Navigation */
+/* NavBar */
 .navbar {
     position: fixed;
     top: 0;
@@ -597,7 +596,6 @@ section {
 .highlight {
     font-weight: 600;
     color: #0077b6;
-    /* azul suave o el que combine con tu marca */
 }
 
 /* Animations */

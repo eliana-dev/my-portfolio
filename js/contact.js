@@ -44,7 +44,7 @@ contactForm.addEventListener("submit", async (e) => {
         isValid = false;
     }
 
-    // ✅ Enviar con Web3Forms si todo está correcto
+    // Enviar con Web3Forms si todo está correcto!!!
     if (isValid) {
         const formData = new FormData(contactForm);
 
@@ -55,7 +55,7 @@ contactForm.addEventListener("submit", async (e) => {
             });
 
             const data = await response.json();
-            console.log("✅ Web3Forms response:", data);
+            console.log("Web3Forms response:", data);
 
             if (response.ok && data.success) {
                 // Mostrar mensaje de éxito
@@ -71,7 +71,7 @@ contactForm.addEventListener("submit", async (e) => {
             }
 
         } catch (err) {
-            console.error("❌ Web3Forms submit error:", err);
+            console.error("Web3Forms submit error:", err);
             alert("There was a problem sending your message. Please try again later.");
         }
     }
@@ -89,6 +89,10 @@ function showError(fieldId, message) {
 
 // Validar formato de email
 function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //regex para validar email: 
+    //[^\s@]+ : uno o mas char que no sean whitespaces o @
+    //^ : empieza con string
+    // \. : punto
+    // $: final
     return emailRegex.test(email);
 }
