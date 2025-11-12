@@ -179,5 +179,5 @@ No se detectan advertencias, lo que indica un buen cumplimiento de las práctica
   
 ## 9.Video de la Version final
 
-[![Ver demo en YouTube](assets\video-demo-portada.png)](https://youtu.be/k0yt_A9t5o0)
+[![Ver demo en YouTube](assets/video-demo-portada.png)](https://youtu.be/k0yt_A9t5o0)
 > Click para ver el demo del portfolio.
