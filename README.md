@@ -1,6 +1,8 @@
 # My Portfolio
+
  Link al portafolio → [My-Portfolio](https://eliana-dev.github.io/my-portfolio/)
-**Autor:** Eliana Valdez (eliana-dev)
+ Link al repositorio → [GitHub Repo](https://github.com/eliana-dev/my-portfolio)
+**Autor:** Eliana Valdez (eliana-dev en [Github](https://github.com/eliana-dev))
 
 ## 1. Objetivo del sitio
 
@@ -175,4 +177,7 @@ No se detectan advertencias, lo que indica un buen cumplimiento de las práctica
 
 - Mostrar el demo de Youtube directamente en la web.
   
-  
+## 9.Video de la Version final
+
+[![Ver demo en YouTube](assets\video-demo-portada.png)](https://youtu.be/k0yt_A9t5o0)
+> Click para ver el demo del portfolio.
