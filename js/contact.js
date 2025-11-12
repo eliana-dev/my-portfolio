@@ -24,6 +24,10 @@ contactForm.addEventListener("submit", async (e) => {
     } else if (name.length < 2) {
         showError("name", "Name must be at least 2 characters");
         isValid = false;
+    } else if (!/\p{L}/u.test(name)) {
+        // El nombre no contiene ninguna letra (por ejemplo: "123" o " 123 456 ")
+        showError("name", "Name must contain at least one letter and cannot be only numbers");
+        isValid = false;
     }
 
     // Validar email
